@@ -272,6 +272,7 @@
     height: 60%;
     border: none;
     border-radius: 5px;
+    padding-left: 1rem;
 }
 
 .chat-icon {
