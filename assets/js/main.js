@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
       return {
+        arrayPosition : 0,
         contacts: [
             {
                 name: 'Michele',
@@ -169,6 +170,8 @@ createApp({
       }
     },
     methods: {
-
+        contatore(numero){
+            this.arrayPosition = numero
+        }
     },
 }).mount('#app')

@@ -22,7 +22,7 @@
                                 Lellone
                             </span>
                         </div>  
-                        <div class="icon-box">
+                        <div class="icon-box" @click="position()">
                             <i class="fa-solid fa-circle-notch"></i>
                             <i class="fa-solid fa-message"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -46,7 +46,7 @@
                         <input type="text">
                     </div>
                     <div class="lista-utenti">
-                        <div v-for="(element, index) in contacts" :key="index" class="users">
+                        <div v-for="(element, index) in contacts" :key="index" class="users" @click="contatore(index)">
                             <div class="avatar-box">
                                 <img class="avatar" :src="`./assets${element.avatar}`" alt="">
                             </div>
@@ -68,14 +68,14 @@
                     <div class="top-bar">
                         <div class="avatar-container">
                             <div class="avatar-box">
-                                <img class="avatar" src="./assets/img/avatar_io.jpg" alt="">
+                                <img class="avatar" :src="`./assets${contacts[arrayPosition].avatar}`" alt="">
                             </div>
                             <div class="user-information">
                                 <span class="nome-utente">
-                                    nome utente
+                                    {{contacts[arrayPosition].name}}
                                 </span>
                                 <span class="ultimo-accesso">
-                                    ultimo accesso
+                                    ultimo acesso: {{contacts[arrayPosition].messages[0].date.split(" ")[1].split(":",2).join(":")}}
                                 </span>
                             </div>
                         </div>  
