@@ -75,7 +75,7 @@
                                     {{contacts[arrayPosition].name}}
                                 </span>
                                 <span class="ultimo-accesso">
-                                    ultimo acesso: {{contacts[arrayPosition].messages[0].date.split(" ")[1].split(":",2).join(":")}}
+                                    ultimo acesso alle ore: {{contacts[arrayPosition].messages[0].date.split(" ")[1].split(":",2).join(":")}}
                                 </span>
                             </div>
                         </div>  
@@ -84,11 +84,16 @@
                             <i class="fa-solid fa-paperclip"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
-
-
                     </div>
                     <div class="chat-box">
-
+                        <div v-for="(element, index) in contacts[arrayPosition].messages" :key="index" :class="element.status">
+                            <span class="txt">
+                                {{element.message}}
+                            </span>
+                            <span class="orario-mex">
+                                {{element.date.split(" ")[1].split(":",2).join(":")}}
+                            </span>
+                        </div>
                     </div>
                     <div class="chat-input">
                     </div>

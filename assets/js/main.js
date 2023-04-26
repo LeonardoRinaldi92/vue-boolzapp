@@ -172,6 +172,10 @@ createApp({
     methods: {
         contatore(numero){
             this.arrayPosition = numero
+        },
+        lastMessage(index){
+            let mex = this.contacts[index].messages[(this.contacts[index].messages.lenght)-1].message 
+            return mex
         }
     },
 }).mount('#app')

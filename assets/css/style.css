@@ -195,10 +195,49 @@
     width: 100%;
     background-image: url(../img/mine.jpg);
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+}
+
+.received{
+    background-color: white;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    width: 30%;
+    margin-left: 10%;
+    padding: 3px;
+    min-height: 40px;
+}
+
+.sent {
+    background-color: rgb(212,249,185);
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    width: 30%;
+    margin-left: 60%;
+    padding: 3px;
+    min-height: 40px;
 }
 
 .chat-input {
     background-color: rgb(243,238,234);
     height: 10%;
     width: 100%;
+}
+
+.orario-mex {
+    align-self: flex-end;
+    font-size: 10px;
+    opacity: 50%;
+}
+
+.txt {
+    margin-left: 10px;
 }
