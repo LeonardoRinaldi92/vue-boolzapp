@@ -47,8 +47,9 @@
 }
 
 .blue-banner {
-    flex-basis: 10%;
+    height: 10%;
     width: 100%;
+    padding: 10px;
     background-color: rgb(142,218,252);
     display: flex;
     align-items: center;
@@ -72,7 +73,8 @@
 .blue-banner .avatar-box {
     height: 40px;
     background-color: white;
-    margin: 0px 10px 0px 20px
+    margin: 0px 10px 0 10px;
+
 }
 
 .blue-banner a {
@@ -82,8 +84,11 @@
 
 }
 
-.avatar-box .fa-solid {
+.fa-solid {
     font-size: 18px;
+}
+
+.avatar-box .fa-solid {
     color: rgb(142,218,252);;
 }
 
@@ -115,6 +120,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 10px;
 }
 
 .user-information {
@@ -175,9 +181,23 @@
 
 .users .user-information {
     margin-left: 10px;
+    flex-basis: 40%;
 }
 
 .time {
-    width: 45%;
+    width: 55%;
     text-align: end;
+}
+
+.chat-box {
+    height: 80%;
+    width: 100%;
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+
+.chat-input {
+    background-color: rgb(243,238,234);
+    height: 10%;
+    width: 100%;
 }
