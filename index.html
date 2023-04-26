@@ -55,12 +55,12 @@
                                 <span class="nome-utente">
                                     {{element.name}}
                                 </span>
-                                <span class="ultimo-messaggio">
+                                <span class="ultimo-messaggio" :class="(element.messages[element.messages.length -1].status == 'sent') ? '' : 'bold' ">
                                     {{element.messages[element.messages.length -1].message}}
                                 </span>                               
                             </div>
                             <span class="time">
-                                {{element.messages[0].date.split(" ")[1].split(":",2).join(":")}}
+                                {{element.messages[element.messages.length -1].date.split(" ")[1].split(":",2).join(":")}}
                             </span>
                         </div>
                     </div>
@@ -97,6 +97,16 @@
                         </div>
                     </div>
                     <div class="chat-input">
+                        <div class="chat-icon">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div class="text-tosend">
+                            <input type="text">
+                        </div>
+                        <div class="chat-icon">
+                            <i class="fa-solid fa-microphone"></i>
+
+                        </div>
                     </div>
                 </div>
             </div>

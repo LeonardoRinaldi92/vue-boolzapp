@@ -84,8 +84,10 @@
 
 }
 
-.fa-solid {
+.fa-solid,
+.fa-regular {
     font-size: 18px;
+    opacity: 50%;
 }
 
 .avatar-box .fa-solid {
@@ -178,7 +180,8 @@
 
 }
 
-.searchbar input:focus {
+.searchbar input:focus,
+.text-tosend input:focus {
     box-shadow: none;
     outline: none;
 }
@@ -225,7 +228,7 @@
     border-radius: 5px;
     width: 30%;
     margin-left: 10%;
-    padding: 3px;
+    padding: 5px;
     min-height: 40px;
 }
 
@@ -246,6 +249,7 @@
     background-color: rgb(243,238,234);
     height: 10%;
     width: 100%;
+    display: flex;
 }
 
 .orario-mex {
@@ -256,4 +260,32 @@
 
 .txt {
     margin-left: 10px;
+}
+
+.text-tosend {
+    flex-basis: 80%;
+
+}
+
+.text-tosend input {
+    width: 100%;
+    height: 60%;
+    border: none;
+    border-radius: 5px;
+}
+
+.chat-icon {
+    flex-basis: 10%;
+}
+
+.chat-icon,
+.text-tosend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bold {
+    font-weight: 600;
+    opacity: 60%;
 }
