@@ -28,7 +28,7 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
-                    <div class="blue-banner">
+                    <div v-if="!banner" class="blue-banner" >
                         <div class="avatar-box">
                             <i class="fa-solid fa-bell-slash"></i>
                         </div>
@@ -40,11 +40,12 @@
                                 Attiva le notifiche Dekstop
                             </a>
                         </div>
+                        <i id="annulla" class="fa-solid fa-x" @click="banner = 'true'"></i>
 
                     </div>
                     <div class="searchbar">
                         <input type="text">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
                     </div>
                     <div class="lista-utenti">
                         <div v-for="(element, index) in contacts" :key="index" class="users" @click="contatore(index)">

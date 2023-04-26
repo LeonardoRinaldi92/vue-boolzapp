@@ -53,6 +53,15 @@
     background-color: rgb(142,218,252);
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+#annulla {
+    position: absolute;
+    top : 10px;
+    right: 10px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .avatar-container {
@@ -88,6 +97,17 @@
 .fa-regular {
     font-size: 18px;
     opacity: 50%;
+
+}
+
+.fa-solid:not(.fa-bell-slash),
+.fa-regular{
+    cursor: pointer;
+}
+
+.fa-solid:not(.fa-bell-slash, .fa-magnifying-glass-arrow-right):hover,
+.fa-regular:hover{
+    font-size:2rem;
 }
 
 .avatar-box .fa-solid {
@@ -167,6 +187,7 @@
 }
 
 .searchbar {
+    border-top: 1px solid rgb(224,224,224);
     background-color: rgb(234,234,234);
     padding: 5px;
     position: relative;

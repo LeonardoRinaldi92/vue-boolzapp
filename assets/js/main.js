@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
       return {
+        banner: false,
         newMes : "",
         arrayPosition : 0,
         contacts: [
