@@ -236,8 +236,8 @@
     background-image: url(../img/mine.jpg);
     overflow-y: scroll;
     display: flex;
-    flex-direction: column-reverse;
-    padding-bottom: 4rem;
+    flex-direction: column;
+    padding: 4rem 0;
 }
 
 .received{

@@ -184,7 +184,7 @@ createApp({
                 message: newMex,
                 status: 'sent'
             }
-            this.contacts[indice].messages.unshift(newOBJ)
+            this.contacts[indice].messages.push(newOBJ)
             this.newMes = "";
             
                
