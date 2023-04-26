@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    background: rgb(74,196,111);
+background: linear-gradient(180deg,rgb(0,150,136) 23%, rgb(220,219,209) 23%);
+}
