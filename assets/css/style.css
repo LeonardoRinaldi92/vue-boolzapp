@@ -61,7 +61,7 @@
 }
 
 .avatar-box {
-    height: 55px;
+    height: 50px;
     aspect-ratio: 1;
     border-radius: 100%;
     overflow: hidden;
@@ -185,7 +185,7 @@
 }
 
 .time {
-    width: 55%;
+    width: 40%;
     text-align: end;
 }
 

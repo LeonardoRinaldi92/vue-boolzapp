@@ -46,37 +46,21 @@
                         <input type="text">
                     </div>
                     <div class="lista-utenti">
-                        
-                        <div class="users">
+                        <div v-for="(element, index) in contacts" :key="index" class="users">
                             <div class="avatar-box">
-                                <img class="avatar" src="./assets/img/avatar_io.jpg" alt="">
+                                <img class="avatar" :src="`./assets${element.avatar}`" alt="">
                             </div>
                             <div class="user-information">
                                 <span class="nome-utente">
-                                    nome utente
+                                    {{element.name}}
                                 </span>
                                 <span class="ultimo-messaggio">
-                                    ultimo messaggio
-                                </span>
-                                
+                                    {{element.messages[1].message}}
+                                </span>                               
                             </div>
                             <span class="time">
-                                00.00
+                                {{element.messages[0].date.split(" ")[1].split(":",2).join(":")}}
                             </span>
-                        </div>
-                        <div class="users">
-                        </div>
-                        <div class="users">
-                        </div>
-                        <div class="users">
-                        </div>
-                        <div class="users">
-                        </div>
-                        <div class="users">
-                        </div>
-                        <div class="users">
-                        </div>
-                        <div class="users">
                         </div>
                     </div>
                 </div>
@@ -107,9 +91,7 @@
 
                     </div>
                     <div class="chat-input">
-
                     </div>
-
                 </div>
             </div>
         </div>
