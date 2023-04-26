@@ -101,11 +101,10 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="text-tosend">
-                            <input type="text">
+                            <input type="text" v-model="newMes" @keyup.enter="InviaMessaggio(arrayPosition)" placeholder="inserisci il tuo messaggio">
                         </div>
                         <div class="chat-icon">
                             <i class="fa-solid fa-microphone"></i>
-
                         </div>
                     </div>
                 </div>

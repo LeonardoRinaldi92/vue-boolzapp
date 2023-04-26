@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
       return {
+        newMes : "",
         arrayPosition : 0,
         contacts: [
             {
@@ -173,9 +174,19 @@ createApp({
         contatore(numero){
             this.arrayPosition = numero
         },
-        lastMessage(index){
-            let mex = this.contacts[index].messages[(this.contacts[index].messages.lenght)-1].message 
-            return mex
+        InviaMessaggio(indice){
+            let newOBJ;
+            let newMex = this.newMes;
+            console.log(newMex)
+            newOBJ = {
+                date: '10/01/2020 15:51:00',
+                message: newMex,
+                status: 'sent'
+            }
+            this.contacts[indice].messages.unshift(newOBJ)
+            this.newMes = "";
+            
+               
         }
     },
 }).mount('#app')
