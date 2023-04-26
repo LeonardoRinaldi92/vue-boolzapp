@@ -167,12 +167,28 @@
 .searchbar {
     background-color: rgb(234,234,234);
     padding: 5px;
+    position: relative;
 }
 
 .searchbar input {
     height: 25px;
     width: 100%;
     border:1px solid rgb(224,224,224);
+    padding-left: 50px;
+
+}
+
+.searchbar input:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.searchbar .fa-solid{
+    position: absolute;
+    font-size: 13px;
+    left: 30px;
+    top: 11px;
+    opacity: 50%;
 }
 
 .nome-utente {
@@ -222,7 +238,7 @@
     border-radius: 5px;
     width: 30%;
     margin-left: 60%;
-    padding: 3px;
+    padding: 5px;
     min-height: 40px;
 }
 

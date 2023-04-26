@@ -44,6 +44,7 @@
                     </div>
                     <div class="searchbar">
                         <input type="text">
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <div class="lista-utenti">
                         <div v-for="(element, index) in contacts" :key="index" class="users" @click="contatore(index)">
@@ -55,7 +56,7 @@
                                     {{element.name}}
                                 </span>
                                 <span class="ultimo-messaggio">
-                                    {{element.messages[1].message}}
+                                    {{element.messages[element.messages.length -1].message}}
                                 </span>                               
                             </div>
                             <span class="time">
