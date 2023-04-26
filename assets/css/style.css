@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Helvetica, Sans-Serif;
+    font-weight: 500;
 }
 
 .main-container {
@@ -72,6 +73,29 @@
     align-items: center;
 }
 
-.icon-box .fa-solid {
+.icon-box .fa-solid,
+.right-icon-box .fa-solid{
     opacity: 30%;
+}
+
+.right-icon-box {
+    font-size: 20px;
+    flex-basis: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-information {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-information span {
+    display:inline-block;
+}
+
+.ultimo-accesso {
+    font-size: 12px ;
+    opacity: 50%;
 }
