@@ -126,7 +126,58 @@
     display:inline-block;
 }
 
-.ultimo-accesso {
+.ultimo-accesso,
+.ultimo-messaggio,
+.time {
     font-size: 12px ;
     opacity: 50%;
+}
+
+.lista-utenti {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.users {
+    flex-basis: 10%;
+    width: 100%;
+    border-top:1px solid rgb(224,224,224);
+    display: flex;
+    align-items:start;
+    padding: 10px;
+}
+
+.users:hover {
+    background-color: rgb(224,224,224);
+}
+
+.users .avatar-box {
+    margin-left: 10px;
+}
+
+.searchbar {
+    background-color: rgb(234,234,234);
+    padding: 5px;
+}
+
+.searchbar input {
+    height: 25px;
+    width: 100%;
+    border:1px solid rgb(224,224,224);
+}
+
+.nome-utente {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.users .user-information {
+    margin-left: 10px;
+}
+
+.time {
+    width: 45%;
+    text-align: end;
 }
