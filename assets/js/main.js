@@ -6,6 +6,7 @@ createApp({
         banner: false,
         newMes : "",
         arrayPosition : 0,
+        risposte: "ok",
         contacts: [
             {
                 name: 'Michele',
@@ -175,19 +176,32 @@ createApp({
         contatore(numero){
             this.arrayPosition = numero
         },
+
         InviaMessaggio(indice){
             let newOBJ;
-            let newMex = this.newMes;
-            console.log(newMex)
-            newOBJ = {
-                date: '10/01/2020 15:51:00',
-                message: newMex,
-                status: 'sent'
-            }
-            this.contacts[indice].messages.push(newOBJ)
-            this.newMes = "";
-            
-               
-        }
+            let newMex;
+            if(this.newMes !== ""){
+                newMex = this.newMes
+                newOBJ = {
+                    date: '10/01/2020 15:51:00',
+                    message: newMex,
+                    status: 'sent'
+                }
+                this.contacts[indice].messages.push(newOBJ)
+                this.newMes = "";
+                this.risposta(indice)
+            };   
+        },
+        risposta:function(indice) {
+            setTimeout(() =>{
+                let newRes = {
+                    date: '10/01/2020 15:53:00',
+                    message: this.risposte,
+                    status: 'received'
+                }
+                this.contacts[indice].messages.push(newRes)
+            }, 2000);
+        },
+        
     },
 }).mount('#app')

@@ -236,14 +236,11 @@
     background-image: url(../img/mine.jpg);
     overflow-y:auto;
     padding: 4rem 0;
-    transform: rotate(180deg);
+    display: flex;
+    flex-direction: column-reverse;
+    /* justify-content: flex-end; */
 }
 
-.reverse {
-    transform: rotate(-180deg);
-    display: flex;
-    flex-direction: column;
-}
 
 .received{
     background-color: white;

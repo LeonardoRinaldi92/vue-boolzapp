@@ -88,17 +88,14 @@
                         </div>
                     </div>
                     <div class="chat-box">
-                        <div class="reverse">
-                            <div v-for="(element, index) in contacts[arrayPosition].messages" :key="index" :class="element.status">
-                                <p class="txt">
-                                    {{element.message}}
-                                </p>
-                                <span class="orario-mex">
-                                    {{element.date.split(" ")[1].split(":",2).join(":")}}
-                                </span>
-                            </div>
-                        </div>
-                        
+                        <div v-for="(element, index) in contacts[arrayPosition].messages.slice().reverse()" :key="index" :class="element.status">
+                            <p class="txt">
+                                {{element.message}}
+                            </p>
+                            <span class="orario-mex">
+                                {{element.date.split(" ")[1].split(":",2).join(":")}}
+                            </span>
+                        </div>                     
                     </div>
                     <div class="chat-input">
                         <div class="chat-icon">
