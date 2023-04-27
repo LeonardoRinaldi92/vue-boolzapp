@@ -111,12 +111,11 @@
                             <span class="triangle" @click="showTendina(index)">
                                 <i id="chev" class="fa-solid fa-chevron-down"></i>
                             </span>
-                            <div v-if="hidden == index" class="choice">
-                                <div v-if="element.status == 'sent'" >
+                            <div v-if="hidden == index" class="choice" >
+                                <div v-if="element.status == 'sent'" @click="eliminaXtutti(arrayPosition, index)">
                                     <p>
                                         Elimina per tutti
                                     </p>
-                                    
                                 </div>
                                 <div @click="eliminaXme(arrayPosition, index)">
                                     <p >

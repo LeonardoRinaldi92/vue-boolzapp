@@ -217,12 +217,21 @@ createApp({
             }
             console.log(index)
         },
+
         eliminaXme(arrayPosition, index){
             let numero = -1  
             this.contacts[arrayPosition].messages.splice(index,1)
             this.hidden = numero 
         },
 
+        eliminaXtutti(arrayPosition, index){
+            let numero = -1
+            if (this.contacts[arrayPosition].messages[index].status == "sent"){
+
+            this.contacts[arrayPosition].messages[index].message = "messaggio eliminato"
+            this.hidden = numero
+            } 
+        },
         search(){
             return this.contacts.filter((element) =>
                 element.name.toLowerCase().includes(this.parola.toLowerCase())

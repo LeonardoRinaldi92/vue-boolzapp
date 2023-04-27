@@ -334,8 +334,9 @@
     position: absolute;
     width: 120px;
     top: 20px;
-    right: 0;
+    right: 20px;
     text-align: center;
+    z-index: 99;
 }
 
 .choice div {
