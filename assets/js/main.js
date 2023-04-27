@@ -212,11 +212,14 @@ createApp({
             console.log(index)
         },
         eliminaXme(arrayPosition, index){
-
             let numero = -1
+            if (this.contacts[arrayPosition].messages.reverse().length !==1){
+                this.contacts[arrayPosition].messages.reverse().splice(index,1)
+                this.hidden = numero
+                console.log(this.contacts[arrayPosition].messages)
+            }
 
-            this.contacts[arrayPosition].messages.reverse().splice(index,1)
-            this.hidden = numero
+            
         }
         
     },
