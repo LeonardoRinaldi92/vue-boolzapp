@@ -189,7 +189,8 @@ createApp({
                 newOBJ = {
                     date: '10/01/2020 15:51:00',
                     message: newMex,
-                    status: 'sent'
+                    status: 'sent',
+                    canDelete: true
                 }
                 this.contacts[indice].messages.push(newOBJ)
                 this.newMes = "";
@@ -203,7 +204,8 @@ createApp({
                 let newRes = {
                     date: '10/01/2020 15:53:00',
                     message: this.risposte[Math.floor(Math.random()*8)],
-                    status: 'received'
+                    status: 'received',
+                    canDelete: true
                 }
                 this.contacts[indice].messages.push(newRes)
                 this.texting = false;
@@ -229,6 +231,7 @@ createApp({
             if (this.contacts[arrayPosition].messages[index].status == "sent"){
 
             this.contacts[arrayPosition].messages[index].message = "messaggio eliminato"
+            this.contacts[arrayPosition].messages[index].canDelete = false
             this.hidden = numero
             } 
         },
@@ -236,8 +239,21 @@ createApp({
             return this.contacts.filter((element) =>
                 element.name.toLowerCase().includes(this.parola.toLowerCase())
             );
-        }
+        },
+        deleteMsg(){
+            this.contacts.forEach(element => {
+                element.messages.forEach(message =>{
+                    message["canDelete"] = true
+                    
+                })
+            });
+         console.log(this.contacts)
+        },
 
+        
+    },
+    mounted() {
+        this.deleteMsg()
         
     },
 }).mount('#app')

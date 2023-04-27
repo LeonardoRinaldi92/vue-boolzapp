@@ -105,10 +105,10 @@
                             <p class="txt">
                                 {{element.message}}
                             </p>
-                            <span class="orario-mex">
+                            <span class="orario-mex" v-if="element.canDelete">
                                 {{element.date.split(" ")[1].split(":",2).join(":")}}
                             </span>
-                            <span class="triangle" @click="showTendina(index)">
+                            <span class="triangle" @click="showTendina(index)" v-if="element.canDelete">
                                 <i id="chev" class="fa-solid fa-chevron-down"></i>
                             </span>
                             <div v-if="hidden == index" class="choice" >
