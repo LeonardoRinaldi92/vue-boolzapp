@@ -87,14 +87,31 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
-                    <div class="chat-box">
-                        <div v-for="(element, index) in contacts[arrayPosition].messages.slice().reverse()" :key="index" :class="element.status">
+                    <div class="chat-box" @mouseleave="hidden = -1">
+                        <div v-for="(element, index) in contacts[arrayPosition].messages.slice().reverse()" :key="index" :class="element.status" class="relative">
                             <p class="txt">
                                 {{element.message}}
                             </p>
                             <span class="orario-mex">
                                 {{element.date.split(" ")[1].split(":",2).join(":")}}
                             </span>
+                            <span class="triangle" @click="showTendina(index)">
+                                <i id="chev" class="fa-solid fa-chevron-down"></i>
+                            </span>
+                            <div v-if="hidden == index" class="choice">
+                                <div v-if="element.status == 'sent'" >
+                                    <p>
+                                        Elimina per tutti
+                                    </p>
+                                    
+                                </div>
+                                <div @click="eliminaXme(arrayPosition, index)">
+                                    <p >
+                                        Elimina per me
+                                    </p>
+                                    
+                                </div>
+                            </div>
                         </div>                     
                     </div>
                     <div class="chat-input">

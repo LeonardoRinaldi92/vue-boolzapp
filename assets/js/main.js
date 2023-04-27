@@ -7,6 +7,7 @@ createApp({
         newMes : "",
         arrayPosition : 0,
         risposte: "ok",
+        hidden: -1,
         contacts: [
             {
                 name: 'Michele',
@@ -202,6 +203,21 @@ createApp({
                 this.contacts[indice].messages.push(newRes)
             }, 2000);
         },
+        showTendina(index){
+            if (this.hidden == index) {
+                this.hidden = -1
+            } else {
+                this.hidden = index
+            }
+            console.log(index)
+        },
+        eliminaXme(arrayPosition, index){
+
+            let numero = -1
+
+            this.contacts[arrayPosition].messages.reverse().splice(index,1)
+            this.hidden = numero
+        }
         
     },
 }).mount('#app')
