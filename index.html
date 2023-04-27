@@ -16,7 +16,7 @@
                     <div class="top-bar">
                         <div class="avatar-container">
                             <div class="avatar-box">
-                                <img class="avatar" src="./assets/img/avatar_io.jpg" alt="">
+                                <img class="avatar" src="./assets/img/avatar_8.jpg" alt="">
                             </div>
                             <span class="nome-utente">
                                 Lellone
@@ -90,9 +90,9 @@
                     <div class="chat-box">
                         <div class="reverse">
                             <div v-for="(element, index) in contacts[arrayPosition].messages" :key="index" :class="element.status">
-                                <span class="txt">
+                                <p class="txt">
                                     {{element.message}}
-                                </span>
+                                </p>
                                 <span class="orario-mex">
                                     {{element.date.split(" ")[1].split(":",2).join(":")}}
                                 </span>

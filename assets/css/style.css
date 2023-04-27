@@ -235,14 +235,14 @@
     width: 100%;
     background-image: url(../img/mine.jpg);
     overflow-y:auto;
-    display: flex;
-    flex-direction: column;
     padding: 4rem 0;
     transform: rotate(180deg);
 }
 
 .reverse {
     transform: rotate(-180deg);
+    display: flex;
+    flex-direction: column;
 }
 
 .received{
@@ -252,10 +252,11 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
-    width: 30%;
-    margin-left: 10%;
+    align-self:flex-start;
     padding: 5px;
     min-height: 40px;
+    margin-left: 50px;
+    
 }
 
 .sent {
@@ -265,10 +266,10 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
-    width: 30%;
-    margin-left: 60%;
+    align-self:flex-end;
     padding: 5px;
     min-height: 40px;
+    margin-right: 50px;
 }
 
 .chat-input {
@@ -286,6 +287,7 @@
 
 .txt {
     margin-left: 10px;
+    margin-right: 20px;
 }
 
 .text-tosend {
