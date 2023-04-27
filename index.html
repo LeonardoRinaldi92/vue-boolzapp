@@ -47,7 +47,7 @@
                         <input type="text">
                         <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
                     </div>
-                    <div class="lista-utenti">
+                    <div class="lista-utenti" >
                         <div v-for="(element, index) in contacts" :key="index" class="users" @click="contatore(index)">
                             <div class="avatar-box">
                                 <img class="avatar" :src="`./assets${element.avatar}`" alt="">
@@ -56,12 +56,16 @@
                                 <span class="nome-utente">
                                     {{element.name}}
                                 </span>
-                                <span class="ultimo-messaggio" :class="(element.messages[element.messages.length -1].status == 'sent') ? '' : 'bold' ">
+                                <span  class="ultimo-messaggio"  v-if="element.messages.length !== 0">
                                     {{element.messages[element.messages.length -1].message}}
+                                </span>
+                                <span v-else class="ultimo-messaggio">
                                 </span>                               
                             </div>
-                            <span class="time">
+                            <span v-if="element.messages.length !== 0" class="time">
                                 {{element.messages[element.messages.length -1].date.split(" ")[1].split(":",2).join(":")}}
+                            </span>
+                            <span v-else class="time">
                             </span>
                         </div>
                     </div>
@@ -76,8 +80,11 @@
                                 <span class="nome-utente">
                                     {{contacts[arrayPosition].name}}
                                 </span>
-                                <span class="ultimo-accesso">
-                                    ultimo acesso il {{contacts[arrayPosition].messages[0].date.split(" ")[0].split(":",2).join(":")}} alle ore: {{contacts[arrayPosition].messages[0].date.split(" ")[1].split(":",2).join(":")}}
+                                <span v-if="contacts[arrayPosition].messages.length !== 0" class="ultimo-accesso">
+                                    ultimo acesso alle il {{contacts[arrayPosition].messages[contacts[arrayPosition].messages.length -1].date.split(" ")[0].split(":",2).join()}} alle {{contacts[arrayPosition].messages[contacts[arrayPosition].messages.length -1].date.split(" ")[1].split(":",2).join(":")}}
+                                </span>
+                                <span v-else class="ultimo-accesso" >
+                                    ultimo accesso ??
                                 </span>
                             </div>
                         </div>  
@@ -87,8 +94,8 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
-                    <div class="chat-box" @mouseleave="hidden = -1">
-                        <div v-for="(element, index) in contacts[arrayPosition].messages.slice().reverse()" :key="index" :class="element.status" class="relative">
+                    <div class="chat-box" @mouseleave="hidden = -1" >
+                        <div v-for="(element, index) in contacts[arrayPosition].messages" :key="index" :class="element.status" class="relative">
                             <p class="txt">
                                 {{element.message}}
                             </p>
@@ -129,6 +136,7 @@
             </div>
         </div>
     </div>
+
     <script src="./assets/js/main.js"></script>
 </head>
 <body>
