@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
       return {
+        parola :"",
         banner: false,
         newMes : "",
         arrayPosition : 0,
@@ -217,6 +218,11 @@ createApp({
             this.hidden = numero 
         },
 
+        search(){
+            return this.contacts.filter((element) =>
+                element.name.toLowerCase().includes(this.parola.toLowerCase())
+            );
+        }
 
         
     },
