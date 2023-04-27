@@ -56,15 +56,17 @@
                                 <span class="nome-utente">
                                     {{element.name}}
                                 </span>
-                                <span  class="ultimo-messaggio"  v-if="element.messages.length !== 0">
-                                    {{element.messages[element.messages.length -1].message}}
+                                <span v-if="texting && index == show" class="ultimo-accesso">
+                                    ...sta digitando...
                                 </span>
-                                <span v-else class="ultimo-messaggio">
-                                </span>                               
+                                <span v-else class="ultimo-messaggio"  v-if="element.messages.length !== 0">
+                                    {{element.messages[element.messages.length -1].message}}
+                                </span>                              
                             </div>
                             <span v-if="element.messages.length !== 0" class="time">
                                 {{element.messages[element.messages.length -1].date.split(" ")[1].split(":",2).join(":")}}
                             </span>
+
                             <span v-else class="time">
                             </span>
                         </div>
@@ -76,16 +78,20 @@
                             <div class="avatar-box">
                                 <img class="avatar" :src="`./assets${contacts[arrayPosition].avatar}`" alt="">
                             </div>
-                            <div class="user-information">
+                            <div class="user-information"> 
                                 <span class="nome-utente">
                                     {{contacts[arrayPosition].name}}
                                 </span>
-                                <span v-if="contacts[arrayPosition].messages.length !== 0" class="ultimo-accesso">
+                                <span v-if="texting && show == arrayPosition" class="ultimo-accesso">
+                                    ...sta digitando...
+                                </span>
+                                <span v-else-if="contacts[arrayPosition].messages.length !== 0" class="ultimo-accesso">
                                     ultimo acesso alle il {{contacts[arrayPosition].messages[contacts[arrayPosition].messages.length -1].date.split(" ")[0].split(":",2).join()}} alle {{contacts[arrayPosition].messages[contacts[arrayPosition].messages.length -1].date.split(" ")[1].split(":",2).join(":")}}
                                 </span>
                                 <span v-else class="ultimo-accesso" >
                                     ultimo accesso ??
                                 </span>
+                               
                             </div>
                         </div>  
                         <div class="right-icon-box">

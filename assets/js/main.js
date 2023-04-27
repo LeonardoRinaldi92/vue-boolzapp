@@ -7,8 +7,10 @@ createApp({
         banner: false,
         newMes : "",
         arrayPosition : 0,
-        risposte: "ok",
+        show : 0,
+        risposte: ["ok","no","forse", "daje!","anche no","bell'idea!","lascia perde","più tardi"],
         hidden: -1,
+        texting : false,
         contacts: [
             {
                 name: 'Michele',
@@ -195,14 +197,17 @@ createApp({
             };   
         },
         risposta:function(indice) {
+            this.show = this.arrayPosition
+            this.texting=true
             setTimeout(() =>{
                 let newRes = {
                     date: '10/01/2020 15:53:00',
-                    message: this.risposte,
+                    message: this.risposte[Math.floor(Math.random()*8)],
                     status: 'received'
                 }
                 this.contacts[indice].messages.push(newRes)
-            }, 2000);
+                this.texting = false;
+            }, Math.floor(Math.random()*15)*1000);
         },
         showTendina(index){
             if (this.hidden == index) {
