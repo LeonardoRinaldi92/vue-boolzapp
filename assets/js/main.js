@@ -11,6 +11,27 @@ createApp({
         risposte: ["ok","no","forse", "daje!","anche no","bell'idea!","lascia perde","più tardi"],
         hidden: -1,
         texting : false,
+        rispostePalla: ["Per quanto posso vedere, sì",
+            "È certo",
+            "Rifai la domanda più tardi",
+            "È decisamente così",
+            "Meglio non risponderti adesso",
+            "Molto probabilmente",
+            "Le prospettive non sono buone",
+            "I segni indicano di sì",
+            "Sì",
+            "sì, senza dubbio",
+            "La mia risposta è no",
+            "Ci puoi contare",
+            "Molto incerto",
+            "È difficile rispondere, prova di nuovo",
+            "Non posso predirlo ora",
+            "Concentrati e rifai la domanda",
+            "Non ci contare",
+            "Senza alcun dubbio",
+            "Le mie fonti dicono di no",
+            "Le prospettive sono buone",
+            ],
         contacts: [
             {
                 name: 'Michele',
@@ -195,7 +216,11 @@ createApp({
                 }
                 this.contacts[arrayPosition].messages.push(newOBJ)
                 this.newMes = "";
-                this.risposta(arrayPosition)
+                if(this.contacts[arrayPosition].name == 'Palla Magica'){
+                    this.rispostaPalla(arrayPosition)
+                }else {
+                    this.risposta(arrayPosition)}
+                
             };   
         },
         risposta:function(arrayPosition) {
@@ -204,7 +229,7 @@ createApp({
             console.log(this.contacts[arrayPosition].isTexting)
             setTimeout(() =>{
                 let newRes = {
-                    date: '10/01/2020 15:53:00',
+                    date: '28/02/2023 11:05:00',
                     message: this.risposte[Math.floor(Math.random()*8)],
                     status: 'received',
                     canDelete: true
@@ -212,6 +237,31 @@ createApp({
                 this.contacts[posizione].messages.push(newRes)
                 this.contacts[posizione].isTexting = false;
             }, Math.floor(Math.random()*15)*1000);
+        },
+        rispostaPalla:function(arrayPosition) {
+            this.contacts[arrayPosition].isTexting = true;
+            let posizione = arrayPosition
+            console.log(this.contacts[arrayPosition].isTexting)
+            setTimeout(() =>{
+                let newRes = {
+                    date: '10/01/2020 15:53:00',
+                    message: this.rispostePalla[Math.floor(Math.random()*20)],
+                    status: 'received',
+                    canDelete: true
+                }
+                this.contacts[posizione].messages.push(newRes)
+                this.contacts[posizione].isTexting = false;
+            }, 1000);
+            setTimeout(() =>{
+                let newRes = {
+                    date: '10/01/2020 15:54:00',
+                    message: "Fammi un'altra domanda",
+                    status: 'received',
+                    canDelete: true
+                }
+                this.contacts[posizione].messages.push(newRes)
+                this.contacts[posizione].isTexting = false;
+            }, 3000);
         },
         showTendina(index){
             if (this.hidden == index) {
@@ -252,11 +302,28 @@ createApp({
             });
          console.log(this.contacts)
         },
+        creaPalla(){
+            let palla = {
+            name: 'Palla Magica',
+            avatar: '/img/avatar_palla.jpg',
+            visible: true,
+            isTexting: false,
+            messages: [
+                {
+                    date: '28/04/2023 15:30:55',
+                    message: 'Fammi una domanda, ho tutte le risposte!',
+                    status: 'received',
+                    canDelete: true
+                },
+            ],
+            }
+            this.contacts.unshift(palla)
+        }
 
         
     },
     mounted() {
         this.userInfo()
-        
+        this.creaPalla()        
     },
 }).mount('#app')
