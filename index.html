@@ -48,7 +48,7 @@
                         <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
                     </div>
                     <div class="lista-utenti" >
-                        <div v-for="(element, index) in search()" :key="index" class="users" @click="contatore(index)">
+                        <div v-for="(element, index) in search()" :key="index" :class="(index == arrayPosition) ? 'grigio':''" class="users" @click="contatore(index)">
                             <div class="avatar-box">
                                 <img class="avatar" :src="`./assets${element.avatar}`" alt="">
                             </div>

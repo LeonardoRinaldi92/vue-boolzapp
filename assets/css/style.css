@@ -179,7 +179,7 @@
 }
 
 .users:hover {
-    background-color: rgb(224,224,224);
+    background-color: rgba(224, 224, 224, 0.559);
 }
 
 .users .avatar-box {
@@ -352,5 +352,9 @@
 
 .choice div:hover {
     background-color: rgb(224,224,224);
+}
+
+.grigio {
+    background-color: rgb(224,224,224)
 }
 
