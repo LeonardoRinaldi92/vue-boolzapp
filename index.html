@@ -56,8 +56,8 @@
                                 <span class="nome-utente">
                                     {{element.name}}
                                 </span>
-                                <span v-if="texting && index == show" class="ultimo-accesso">
-                                    ...sta digitando...
+                                <span v-if="texting && element.isTexting" class="ultimo-accesso">
+                                    ...sta scrivendo...
                                 </span>
                                 <span v-else class="ultimo-messaggio"  v-if="element.messages.length !== 0">
                                     {{element.messages[element.messages.length -1].message}}
@@ -82,8 +82,8 @@
                                 <span class="nome-utente">
                                     {{contacts[arrayPosition].name}}
                                 </span>
-                                <span v-if="texting && show == arrayPosition" class="ultimo-accesso">
-                                    ...sta digitando...
+                                <span v-if="texting && contacts[arrayPosition].isTexting && show == arrayPosition  " class="ultimo-accesso">
+                                    ...sta scrivendo...
                                 </span>
                                 <span v-else-if="contacts[arrayPosition].messages.length !== 0" class="ultimo-accesso">
                                     ultimo acesso alle il {{contacts[arrayPosition].messages[contacts[arrayPosition].messages.length -1].date.split(" ")[0].split(":",2).join()}} alle {{contacts[arrayPosition].messages[contacts[arrayPosition].messages.length -1].date.split(" ")[1].split(":",2).join(":")}}

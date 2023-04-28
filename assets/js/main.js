@@ -179,9 +179,10 @@ createApp({
     methods: {
         contatore(numero){
             this.arrayPosition = numero
+            this.show = this.arrayPosition;
         },
 
-        InviaMessaggio(indice){
+        InviaMessaggio(arrayPosition){
             let newOBJ;
             let newMex;
             if(this.newMes !== ""){
@@ -192,14 +193,16 @@ createApp({
                     status: 'sent',
                     canDelete: true
                 }
-                this.contacts[indice].messages.push(newOBJ)
+                this.contacts[arrayPosition].messages.push(newOBJ)
                 this.newMes = "";
-                this.risposta(indice)
+                this.risposta(arrayPosition)
             };   
         },
-        risposta:function(indice) {
-            this.show = this.arrayPosition
-            this.texting=true
+        risposta:function(arrayPosition) {
+            this.contacts[arrayPosition].isTexting = true;
+            this.texting=true;
+            let posizione = arrayPosition
+            console.log(this.contacts[arrayPosition].isTexting)
             setTimeout(() =>{
                 let newRes = {
                     date: '10/01/2020 15:53:00',
@@ -207,7 +210,8 @@ createApp({
                     status: 'received',
                     canDelete: true
                 }
-                this.contacts[indice].messages.push(newRes)
+                this.contacts[posizione].messages.push(newRes)
+                this.contacts[posizione].isTexting = false;
                 this.texting = false;
             }, Math.floor(Math.random()*15)*1000);
         },
@@ -240,8 +244,9 @@ createApp({
                 element.name.toLowerCase().includes(this.parola.toLowerCase())
             );
         },
-        deleteMsg(){
+        userInfo(){
             this.contacts.forEach(element => {
+                element["isTexting"] = false ;
                 element.messages.forEach(message =>{
                     message["canDelete"] = true
                     
@@ -253,7 +258,7 @@ createApp({
         
     },
     mounted() {
-        this.deleteMsg()
+        this.userInfo()
         
     },
 }).mount('#app')
