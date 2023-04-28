@@ -82,6 +82,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    border: 1px solid gray;
 }
 
 #sceglifoto .avatar-box img:hover {
@@ -404,7 +405,7 @@
 }
 
 .grigio {
-    background-color: rgb(224,224,224)
+    background-color: c
 }
 
 
