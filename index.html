@@ -56,7 +56,10 @@
                                 <span class="nome-utente">
                                     {{element.name}}
                                 </span>
-                                <span v-if="texting && element.isTexting" class="ultimo-accesso">
+                                <span v-if="element.isTexting && element.name == 'Palla Magica'" class="ultimo-accesso">
+                                    ...pensando alla risposta...
+                                </span>
+                                <span v-else-if="element.isTexting" class="ultimo-accesso">
                                     ...sta scrivendo...
                                 </span>
                                 <span v-else class="ultimo-messaggio"  v-if="element.messages.length !== 0">
@@ -82,9 +85,13 @@
                                 <span class="nome-utente">
                                     {{contacts[arrayPosition].name}}
                                 </span>
-                                <span v-if="texting && contacts[arrayPosition].isTexting && show == arrayPosition  " class="ultimo-accesso">
+                                <span v-if="contacts[arrayPosition].isTexting && show == arrayPosition &&  contacts[arrayPosition].name == 'Palla Magica'" class="ultimo-accesso">
+                                    ...pensando alla risposta...
+                                </span>
+                                <span v-else-if="contacts[arrayPosition].isTexting && show == arrayPosition " class="ultimo-accesso">
                                     ...sta scrivendo...
                                 </span>
+
                                 <span v-else-if="contacts[arrayPosition].messages.length !== 0" class="ultimo-accesso">
                                     ultimo acesso alle il {{contacts[arrayPosition].messages[contacts[arrayPosition].messages.length -1].date.split(" ")[0].split(":",2).join()}} alle {{contacts[arrayPosition].messages[contacts[arrayPosition].messages.length -1].date.split(" ")[1].split(":",2).join(":")}}
                                 </span>

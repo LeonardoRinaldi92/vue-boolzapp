@@ -200,7 +200,6 @@ createApp({
         },
         risposta:function(arrayPosition) {
             this.contacts[arrayPosition].isTexting = true;
-            this.texting=true;
             let posizione = arrayPosition
             console.log(this.contacts[arrayPosition].isTexting)
             setTimeout(() =>{
@@ -212,7 +211,6 @@ createApp({
                 }
                 this.contacts[posizione].messages.push(newRes)
                 this.contacts[posizione].isTexting = false;
-                this.texting = false;
             }, Math.floor(Math.random()*15)*1000);
         },
         showTendina(index){
