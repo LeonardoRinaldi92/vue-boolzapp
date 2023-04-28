@@ -209,7 +209,7 @@ createApp({
             if(this.newMes !== ""){
                 newMex = this.newMes
                 newOBJ = {
-                    date: '10/01/2020 15:51:00',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: newMex,
                     status: 'sent',
                     canDelete: true
@@ -229,7 +229,7 @@ createApp({
             console.log(this.contacts[arrayPosition].isTexting)
             setTimeout(() =>{
                 let newRes = {
-                    date: '28/02/2023 11:05:00',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: this.risposte[Math.floor(Math.random()*8)],
                     status: 'received',
                     canDelete: true
@@ -244,7 +244,7 @@ createApp({
             console.log(this.contacts[arrayPosition].isTexting)
             setTimeout(() =>{
                 let newRes = {
-                    date: '10/01/2020 15:53:00',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: this.rispostePalla[Math.floor(Math.random()*20)],
                     status: 'received',
                     canDelete: true
@@ -254,7 +254,7 @@ createApp({
             }, 1000);
             setTimeout(() =>{
                 let newRes = {
-                    date: '10/01/2020 15:54:00',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: "Fammi un'altra domanda",
                     status: 'received',
                     canDelete: true
@@ -310,7 +310,7 @@ createApp({
             isTexting: false,
             messages: [
                 {
-                    date: '28/04/2023 15:30:55',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: 'Fammi una domanda, ho tutte le risposte!',
                     status: 'received',
                     canDelete: true
