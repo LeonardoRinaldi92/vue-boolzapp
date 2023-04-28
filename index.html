@@ -16,8 +16,11 @@
                     <div class="top-bar">
                         <div class="avatar-container">
                             <div class="avatar-box" id="my-avatar" @click="scegliFotoNuova">
-                                <div class="matita">
+                                <div v-if="!choseAvatar" class="matita">
                                     <i class="fa-solid fa-pencil" id="matita-change"></i>
+                                </div>
+                                <div v-else class="matita">
+                                    <i class="fa-regular fa-circle-check" id="check-change"></i>
                                 </div>
                                 <img class="avatar" :src="`./assets${miafoto}`" alt=""> 
                             </div>
@@ -25,7 +28,6 @@
                                 <div class="avatar-box" v-for="(element, index) in activeUsers()" :key="index" @click="mostrami(element)">
                                     <img :src="`./assets${element.avatar}`" alt="">
                                 </div>
-
                             </div>
                             <span class="nome-utente">
                                 Lellone

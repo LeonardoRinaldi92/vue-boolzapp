@@ -125,8 +125,12 @@
 
 #matita-change {
     opacity: 1;
-    color: white;
-    
+    color: white;  
+}
+
+#check-change {
+    opacity: 1;
+    color: rgb(37, 255, 48);  
 }
 
 .blue-banner .avatar-box {
@@ -155,7 +159,7 @@
     cursor: pointer;
 }
 
-.fa-solid:not(.fa-bell-slash, .fa-magnifying-glass-arrow-right, #matita-change):hover,
+.fa-solid:not(.fa-bell-slash, .fa-magnifying-glass-arrow-right, #matita-change, #check-change):hover,
 .fa-regular:hover{
     font-size:2rem;
 }
