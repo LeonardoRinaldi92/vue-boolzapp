@@ -15,8 +15,17 @@
                 <div class="left-box">
                     <div class="top-bar">
                         <div class="avatar-container">
-                            <div class="avatar-box">
-                                <img class="avatar" src="./assets/img/avatar_8.jpg" alt="">
+                            <div class="avatar-box" id="my-avatar" @click="scegliFotoNuova">
+                                <div class="matita">
+                                    <i class="fa-solid fa-pencil" id="matita-change"></i>
+                                </div>
+                                <img class="avatar" :src="`./assets${miafoto}`" alt=""> 
+                            </div>
+                            <div v-if="choseAvatar" id="scegli-foto">
+                                <div class="avatar-box" v-for="(element, index) in activeUsers()" :key="index" @click="mostrami(element)">
+                                    <img :src="`./assets${element.avatar}`" alt="">
+                                </div>
+
                             </div>
                             <span class="nome-utente">
                                 Lellone
@@ -41,7 +50,6 @@
                             </a>
                         </div>
                         <i id="annulla" class="fa-solid fa-x" @click="banner = 'true'"></i>
-
                     </div>
                     <div class="searchbar">
                         <input type="text" v-model="parola" @change="search()">
@@ -127,8 +135,7 @@
                                 <div @click="eliminaXme(arrayPosition, index)">
                                     <p >
                                         Elimina per me
-                                    </p>
-                                    
+                                    </p>                         
                                 </div>
                             </div>
                         </div>                     

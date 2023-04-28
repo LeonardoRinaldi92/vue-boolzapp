@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
       return {
+        choseAvatar: false,
         parola :"",
         banner: false,
         newMes : "",
@@ -194,7 +195,8 @@ createApp({
                     }
                 ],
             }
-        ]
+        ],
+        miafoto: '',
       }
     },
     methods: {
@@ -318,12 +320,28 @@ createApp({
             ],
             }
             this.contacts.unshift(palla)
+        },
+        scegliFotoNuova(){
+            this.choseAvatar = !this.choseAvatar
+        },
+        activeUsers() {
+            return this.contacts.filter(function(contact) {
+                return contact.name !== "Palla Magica"
+            })
+        },
+        mostrami(element){
+            this.miafoto = element.avatar
+        },
+        setPhoto(){
+            this.miafoto = this.contacts[8].avatar
         }
-
-        
     },
     mounted() {
         this.userInfo()
-        this.creaPalla()        
+        this.creaPalla()   
+        this.setPhoto()     
     },
+    computed() {
+        this.activeUsers()
+    }
 }).mount('#app')

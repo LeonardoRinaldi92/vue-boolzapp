@@ -67,6 +67,25 @@
 .avatar-container {
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+#scegli-foto {
+    position: absolute;
+    height: 120px;
+    width: 240px;
+    background-color: white;
+    bottom: -125px;
+    left: -10px;
+    z-index: 99;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#sceglifoto .avatar-box img:hover {
+    cursor: pointer;
 }
 
 .avatar-box {
@@ -77,6 +96,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+.avatar-box img{
+    height: 50px;
+}
+#my-avatar:hover {
+    cursor: pointer;
+}
+
+.matita {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:rgba(128, 128, 128, 0.46);
+    height: 60px;
+    aspect-ratio: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-box:hover .matita {
+    display: flex;
+}
+
+#matita-change {
+    opacity: 1;
+    color: white;
+    
 }
 
 .blue-banner .avatar-box {
@@ -100,12 +149,12 @@
 
 }
 
-.fa-solid:not(.fa-bell-slash),
+.fa-solid:not(.fa-bell-slash,),
 .fa-regular{
     cursor: pointer;
 }
 
-.fa-solid:not(.fa-bell-slash, .fa-magnifying-glass-arrow-right):hover,
+.fa-solid:not(.fa-bell-slash, .fa-magnifying-glass-arrow-right, #matita-change):hover,
 .fa-regular:hover{
     font-size:2rem;
 }
@@ -357,4 +406,6 @@
 .grigio {
     background-color: rgb(224,224,224)
 }
+
+
 
